@@ -1,5 +1,5 @@
 // Mengimpor decorator dari NestJS untuk membangun RESTful controller
-import { Controller, Get, Post, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, NotFoundException } from '@nestjs/common';
 
 // Mengimpor UserService (yang berisi logika bisnis) dan tipe data User
 import { UserService, User } from './user.service';
@@ -24,7 +24,9 @@ export class UserController {
   // Lalu memanggil service.findById untuk mendapatkan data user dengan ID tersebut
   @Get(':id')
   findById(@Param('id') id: string): User {
-    return this.userService.findById(+id);
+    const user = this.userService.findById(+id);
+    if (!user) throw new NotFoundException(`User with id ${id} not found`);
+    return user;
   }
 
   // HTTP POST ke endpoint /user
