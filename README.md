@@ -11,19 +11,7 @@ This is a minimal example project demonstrating how to build a **REST API** and 
 
 ```
 
-nest-api-demo/
-├── src/
-│   ├── user/
-│   │   ├── user.controller.ts   # REST endpoints
-│   │   ├── user.resolver.ts     # GraphQL resolver
-│   │   ├── user.service.ts      # Shared business logic
-│   │   ├── user.model.ts        # GraphQL schema (code-first)
-│   │   └── user.module.ts
-│   └── app.module.ts            # Main application module
-├── .env                         # (optional) environment variables
-├── package.json
-├── tsconfig.json
-└── README.md
+<pre lang="text"><code> nest-api-demo/ └── src/ └── user/ - user.controller.ts # REST endpoints - user.resolver.ts # GraphQL resolver - user.service.ts # Shared business logic - user.model.ts # GraphQL schema (code-first) - user.module.ts - app.module.ts # Main application module - .env # (optional) - package.json - tsconfig.json - README.md </code></pre>
 
 ````
 
